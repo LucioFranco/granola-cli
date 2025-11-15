@@ -16,7 +16,9 @@
       "Bash(cargo build:*)",
       "Bash(cargo clippy:*)",
       "Bash(jj diff:*)",
-      "Bash(cargo fmt:*)"
+      "Bash(cargo fmt:*)",
+      "Bash(/Users/lucio/code/granola-cli/target/debug/granola-cli details:*)",
+      "Bash(cargo test:*)"
     ],
     "deny": [],
     "ask": []
