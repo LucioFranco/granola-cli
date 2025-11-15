@@ -6,6 +6,7 @@ pub enum GranolaError {
     InvalidCacheFormat(String),
     MeetingNotFound(String),
     TranscriptNotFound(String),
+    #[allow(dead_code)]
     InvalidArguments(String),
     IoError(std::io::Error),
     JsonError(serde_json::Error),

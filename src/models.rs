@@ -21,6 +21,7 @@ pub struct CacheDocument {
 
 #[derive(Debug, Deserialize)]
 pub struct DocumentPeople {
+    #[allow(dead_code)]
     pub title: Option<String>,
     pub creator: Option<Person>,
     pub attendees: Option<Vec<Person>>,

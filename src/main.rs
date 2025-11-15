@@ -1,16 +1,18 @@
-mod error;
-mod models;
 mod cache;
 mod commands;
+mod error;
+mod models;
 
 use clap::{Parser, Subcommand};
-use error::{GranolaError, Result};
+use error::Result;
 use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(name = "granola")]
 #[command(about = "Query Granola meeting data", long_about = None)]
-#[command(after_help = "For AI assistants: Run `granola workflow` for usage patterns, output schemas, and best practices.")]
+#[command(
+    after_help = "For AI assistants: Run `granola workflow` for usage patterns, output schemas, and best practices."
+)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,

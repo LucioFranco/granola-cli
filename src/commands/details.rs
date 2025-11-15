@@ -16,7 +16,10 @@ pub fn get_meeting_details(meeting_id: &str, cache: &Cache) -> Result<MeetingDet
         date: doc.created_at.clone(),
         duration_minutes,
         participants,
-        meeting_type: doc.doc_type.clone().unwrap_or_else(|| "unknown".to_string()),
+        meeting_type: doc
+            .doc_type
+            .clone()
+            .unwrap_or_else(|| "unknown".to_string()),
         has_transcript: cache.transcripts.contains_key(&doc.id),
         has_notes: doc.notes_plain.is_some() || doc.notes_markdown.is_some(),
         created_at: doc.created_at.clone(),

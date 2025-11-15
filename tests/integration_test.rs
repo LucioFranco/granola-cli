@@ -30,7 +30,14 @@ fn test_workflow_command() {
 #[test]
 fn test_cache_not_found_error() {
     let output = Command::new("cargo")
-        .args(&["run", "--", "search", "test", "--cache-path", "/nonexistent/path.json"])
+        .args(&[
+            "run",
+            "--",
+            "search",
+            "test",
+            "--cache-path",
+            "/nonexistent/path.json",
+        ])
         .output()
         .expect("Failed to execute command");
 
