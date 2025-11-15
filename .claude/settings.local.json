@@ -9,7 +9,11 @@
       "Bash(test:*)",
       "Bash(cargo check:*)",
       "Bash(jj status:*)",
-      "Bash(jj commit:*)"
+      "Bash(jj commit:*)",
+      "Bash(jj log:*)",
+      "Bash(jj show:*)",
+      "Bash(cargo run:*)",
+      "Bash(cargo build:*)"
     ],
     "deny": [],
     "ask": []
