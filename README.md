@@ -162,10 +162,3 @@ cargo test
 ```bash
 cargo run -- search "test"
 ```
-
-## Related Documentation
-
-- **Design Document**: `docs/plans/2025-11-15-granola-cli-design.md`
-- **Implementation Plan**: `docs/plans/2025-11-15-granola-cli-implementation.md`
-- **AI Assistant Context**: `CLAUDE.md`
-- **Cache Format Analysis**: `/Users/lucio/Library/Application Support/Granola/CONTEXT.md`
