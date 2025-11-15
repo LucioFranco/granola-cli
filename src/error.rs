@@ -87,7 +87,7 @@ impl GranolaError {
 
     fn error_message(&self) -> String {
         match self {
-            GranolaError::CacheNotFound(_) => "Cache file not found".to_string(),
+            GranolaError::CacheNotFound(path) => format!("Cache file not found: {}", path),
             GranolaError::InvalidCacheFormat(msg) => format!("Invalid cache format: {}", msg),
             GranolaError::MeetingNotFound(id) => format!("Meeting not found: {}", id),
             GranolaError::TranscriptNotFound(id) => format!("Transcript not found for meeting: {}", id),
