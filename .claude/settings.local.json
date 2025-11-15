@@ -18,7 +18,10 @@
       "Bash(jj diff:*)",
       "Bash(cargo fmt:*)",
       "Bash(/Users/lucio/code/granola-cli/target/debug/granola-cli details:*)",
-      "Bash(cargo test:*)"
+      "Bash(cargo test:*)",
+      "Bash(/Users/lucio/code/granola-cli/target/release/granola-cli workflow:*)",
+      "Bash(/Users/lucio/code/granola-cli/target/release/granola-cli search:*)",
+      "Bash(/Users/lucio/code/granola-cli/target/release/granola-cli:*)"
     ],
     "deny": [],
     "ask": []
