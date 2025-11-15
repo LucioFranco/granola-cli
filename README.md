@@ -4,13 +4,31 @@ A command-line tool for querying Granola meeting data. Optimized for AI assistan
 
 ## Installation
 
+### From GitHub Releases (Recommended)
+
+Download pre-built binaries from the [Releases](https://github.com/luciofranco/granola-cli/releases) page:
+
+```bash
+# macOS (Apple Silicon)
+curl -L https://github.com/luciofranco/granola-cli/releases/latest/download/granola-cli-aarch64-apple-darwin.tar.gz | tar xz
+sudo mv granola-cli /usr/local/bin/
+
+# macOS (Intel)
+curl -L https://github.com/luciofranco/granola-cli/releases/latest/download/granola-cli-x86_64-apple-darwin.tar.gz | tar xz
+sudo mv granola-cli /usr/local/bin/
+
+# Linux (x86_64)
+curl -L https://github.com/luciofranco/granola-cli/releases/latest/download/granola-cli-x86_64-unknown-linux-gnu.tar.gz | tar xz
+sudo mv granola-cli /usr/local/bin/
+```
+
 ### From Source
 
 ```bash
-git clone <repository>
+git clone https://github.com/luciofranco/granola-cli.git
 cd granola-cli
 cargo build --release
-cp target/release/granola-cli /usr/local/bin/  # Or add to PATH
+cp target/release/granola-cli /usr/local/bin/
 ```
 
 ### Using Nix
@@ -19,6 +37,20 @@ cp target/release/granola-cli /usr/local/bin/  # Or add to PATH
 nix develop  # Enter development shell
 cargo build --release
 ```
+
+### Claude Code Skill (Optional)
+
+To enable Claude Code to automatically use this tool:
+
+```bash
+# Install the skill
+cp .claude/skills/using-granola-cli.md ~/.claude/skills/
+
+# Or symlink for auto-updates
+ln -s $(pwd)/.claude/skills/using-granola-cli.md ~/.claude/skills/
+```
+
+Now Claude Code can use `granola-cli` when you ask about your Granola meetings!
 
 ## Usage
 
