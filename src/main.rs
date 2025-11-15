@@ -83,7 +83,7 @@ fn main() {
 fn run(cli: Cli) -> Result<String> {
     // Handle workflow command separately (no cache needed)
     if matches!(cli.command, Commands::Workflow) {
-        return Ok("Workflow guide placeholder".to_string());
+        return Ok(commands::get_workflow_guide());
     }
 
     // Load cache for other commands
