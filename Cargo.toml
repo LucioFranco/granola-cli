@@ -2,6 +2,13 @@
 name = "granola-cli"
 version = "0.1.0"
 edition = "2021"
+authors = ["Lucio Franco <luciofranco14@gmail.com>"]
+license = "MIT"
+description = "CLI tool for querying Granola meeting data with JSON output optimized for LLM consumption"
+repository = "https://github.com/LucioFranco/granola-cli"
+homepage = "https://github.com/LucioFranco/granola-cli"
+keywords = ["cli", "meetings", "granola", "llm", "json"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 clap = { version = "4", features = ["derive"] }
