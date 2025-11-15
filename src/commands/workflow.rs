@@ -16,13 +16,13 @@ Query local Granola meeting data via CLI. Optimized for LLM consumption with JSO
 ## Common Patterns
 
 ### Finding and Reading a Meeting
-1. Search: `granola search "moose dx"`
+1. Search: `granola search "project topic"`
 2. Review results, pick relevant meeting ID
 3. Get details: `granola details <id>` (optional, for metadata)
 4. Get content: `granola transcript <id>` or `granola documents <id>`
 
 ### Finding Recent Meetings with Someone
-`granola search "Dave" --limit 20`
+`granola search "person_name" --limit 20`
 
 ### Getting Full Context for a Meeting
 ```bash

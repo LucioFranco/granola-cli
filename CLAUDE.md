@@ -102,7 +102,7 @@ Not in v1, but documented for later:
 
 - Watch mode: `granola watch` for cache updates
 - Export formats: `--format csv` or `--format markdown`
-- Advanced filters: `--from DATE --to DATE --participants "Dave"`
+- Advanced filters: `--from DATE --to DATE --participants "person_name"`
 - Analytics: Implement the `analyze` command from MCP server
 - Streaming: Large transcripts could stream to stdout
 

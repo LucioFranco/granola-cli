@@ -57,8 +57,8 @@ granola-cli search "<query>" [--limit N]
 
 **Use cases:**
 - "Find meetings about the roadmap"
-- "Search for meetings with Dave"
-- "Find recent moose discussions"
+- "Search for meetings with a specific person"
+- "Find recent project discussions"
 
 **Token optimization tip:** Use `--limit 5` if you only need recent matches.
 
@@ -132,7 +132,7 @@ granola-cli documents <meeting-id>
 
 ```bash
 # 1. Search for meetings
-granola-cli search "moose architecture" --limit 5
+granola-cli search "project architecture" --limit 5
 
 # 2. Review results, pick relevant meeting ID
 # (LLM: Look at titles, summaries, participants)
@@ -146,10 +146,10 @@ granola-cli documents <meeting-id>
 ### Finding Recent Meetings with Someone
 
 ```bash
-granola-cli search "Dave" --limit 10
+granola-cli search "alice" --limit 10
 ```
 
-The search matches participant names, so this returns meetings where Dave participated.
+The search matches participant names, so this returns meetings where that person participated.
 
 ### Getting Full Context for a Meeting
 
@@ -287,11 +287,11 @@ Before fetching transcript/documents, check `has_transcript` and `has_notes` fla
 
 ## Examples
 
-### "What did we discuss about the moose project?"
+### "What did we discuss about the project?"
 
 ```bash
-# 1. Find moose meetings
-granola-cli search "moose" --limit 5
+# 1. Find project meetings
+granola-cli search "project name" --limit 5
 
 # 2. Review summaries in search results
 # 3. If summary is enough, done! If not:
@@ -301,11 +301,11 @@ granola-cli documents <most-relevant-id>
 granola-cli transcript <most-relevant-id>
 ```
 
-### "Who attended the meeting on November 11th?"
+### "Who attended a specific meeting?"
 
 ```bash
 # 1. Search by date or topic from that day
-granola-cli search "november 11" --limit 10
+granola-cli search "sprint planning" --limit 10
 
 # 2. Get details for the right meeting
 granola-cli details <meeting-id>

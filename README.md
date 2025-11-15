@@ -57,7 +57,7 @@ Now Claude Code can use `granola-cli` when you ask about your Granola meetings!
 ### Search Meetings
 
 ```bash
-granola search "moose" --limit 10
+granola search "project name" --limit 10
 ```
 
 Returns JSON with matching meetings, including summaries for LLM context.
