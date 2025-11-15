@@ -1,6 +1,7 @@
 mod error;
 mod models;
 mod cache;
+mod commands;
 
 use clap::{Parser, Subcommand};
 use error::{GranolaError, Result};
@@ -92,8 +93,8 @@ fn run(cli: Cli) -> Result<String> {
     // Dispatch to appropriate command
     match cli.command {
         Commands::Search { query, limit } => {
-            // Placeholder
-            Ok(format!("{{\"query\": \"{}\", \"results\": []}}", query))
+            let output = commands::search_meetings(&query, limit, &cache)?;
+            Ok(serde_json::to_string_pretty(&output)?)
         }
         Commands::Details { meeting_id } => {
             // Placeholder
