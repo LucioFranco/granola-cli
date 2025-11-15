@@ -97,8 +97,8 @@ fn run(cli: Cli) -> Result<String> {
             Ok(serde_json::to_string_pretty(&output)?)
         }
         Commands::Details { meeting_id } => {
-            // Placeholder
-            Ok(format!("{{\"id\": \"{}\"}}", meeting_id))
+            let output = commands::get_meeting_details(&meeting_id, &cache)?;
+            Ok(serde_json::to_string_pretty(&output)?)
         }
         Commands::Transcript { meeting_id } => {
             // Placeholder
