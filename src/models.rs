@@ -94,9 +94,9 @@ pub struct TranscriptOutput {
 
 #[derive(Debug, Serialize)]
 pub struct CompactSegment {
-    pub s: String,  // speaker
-    pub t: String,  // text
-    pub ts: i64,    // timestamp
+    pub s: String, // speaker
+    pub t: String, // text
+    pub ts: i64,   // timestamp
 }
 
 #[derive(Debug, Serialize)]

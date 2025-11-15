@@ -15,7 +15,8 @@
       "Bash(cargo run:*)",
       "Bash(cargo build:*)",
       "Bash(cargo clippy:*)",
-      "Bash(jj diff:*)"
+      "Bash(jj diff:*)",
+      "Bash(cargo fmt:*)"
     ],
     "deny": [],
     "ask": []

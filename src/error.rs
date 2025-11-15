@@ -90,7 +90,9 @@ impl GranolaError {
             GranolaError::CacheNotFound(path) => format!("Cache file not found: {}", path),
             GranolaError::InvalidCacheFormat(msg) => format!("Invalid cache format: {}", msg),
             GranolaError::MeetingNotFound(id) => format!("Meeting not found: {}", id),
-            GranolaError::TranscriptNotFound(id) => format!("Transcript not found for meeting: {}", id),
+            GranolaError::TranscriptNotFound(id) => {
+                format!("Transcript not found for meeting: {}", id)
+            }
             GranolaError::InvalidArguments(msg) => format!("Invalid arguments: {}", msg),
             GranolaError::IoError(e) => format!("IO error: {}", e),
             GranolaError::JsonError(e) => format!("JSON parsing error: {}", e),
@@ -99,10 +101,18 @@ impl GranolaError {
 
     fn suggestion(&self) -> Option<String> {
         match self {
-            GranolaError::CacheNotFound(_) => Some("Ensure Granola is installed and has been run at least once".to_string()),
-            GranolaError::InvalidCacheFormat(_) => Some("Cache might be corrupted or version mismatch".to_string()),
-            GranolaError::MeetingNotFound(_) => Some("Use 'granola search' to find valid meeting IDs".to_string()),
-            GranolaError::TranscriptNotFound(_) => Some("This meeting may not have been transcribed".to_string()),
+            GranolaError::CacheNotFound(_) => {
+                Some("Ensure Granola is installed and has been run at least once".to_string())
+            }
+            GranolaError::InvalidCacheFormat(_) => {
+                Some("Cache might be corrupted or version mismatch".to_string())
+            }
+            GranolaError::MeetingNotFound(_) => {
+                Some("Use 'granola search' to find valid meeting IDs".to_string())
+            }
+            GranolaError::TranscriptNotFound(_) => {
+                Some("This meeting may not have been transcribed".to_string())
+            }
             _ => None,
         }
     }

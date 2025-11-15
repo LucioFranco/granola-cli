@@ -38,7 +38,9 @@ pub fn load_cache(cache_path: &PathBuf) -> Result<Cache> {
     })
 }
 
-fn parse_documents(state: &serde_json::Map<String, Value>) -> Result<HashMap<String, CacheDocument>> {
+fn parse_documents(
+    state: &serde_json::Map<String, Value>,
+) -> Result<HashMap<String, CacheDocument>> {
     let mut documents = HashMap::new();
 
     if let Some(docs_value) = state.get("documents") {
@@ -54,7 +56,9 @@ fn parse_documents(state: &serde_json::Map<String, Value>) -> Result<HashMap<Str
     Ok(documents)
 }
 
-fn parse_transcripts(state: &serde_json::Map<String, Value>) -> Result<HashMap<String, Vec<TranscriptSegment>>> {
+fn parse_transcripts(
+    state: &serde_json::Map<String, Value>,
+) -> Result<HashMap<String, Vec<TranscriptSegment>>> {
     let mut transcripts = HashMap::new();
 
     if let Some(trans_value) = state.get("transcripts") {
@@ -88,6 +92,5 @@ pub fn resolve_cache_path(cli_path: Option<PathBuf>) -> PathBuf {
 
     // Default path
     let home = std::env::var("HOME").unwrap_or_else(|_| ".".to_string());
-    PathBuf::from(home)
-        .join("Library/Application Support/Granola/cache-v3.json")
+    PathBuf::from(home).join("Library/Application Support/Granola/cache-v3.json")
 }
